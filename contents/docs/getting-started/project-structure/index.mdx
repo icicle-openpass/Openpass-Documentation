@@ -1,0 +1,120 @@
+---
+title: Project Structure
+description: Lets get to know how our Folder Structure is.
+---
+
+## Overview
+
+### . /
+
+This folder contains all files related to run Openpass Appication. Every component plays an independent role.
+
+```
+./                     
+├── adminTools                
+├── bin              
+├── ea1openpass
+├── helmbase       
+├── icicleEdge       
+├── local.softwarepilotservice       
+├── httpservice.logs         
+└── install.sh         
+```
+
+### adminTools
+
+This folder contains all files which help will help you to configure and edit the functionality as you like. This folder give you an additional feature of taking this edge application to cloud.
+             
+              
+```
+adminTools                    
+├── deployTools
+│   ├── copyFirstPod.sh    
+│   ├── deployMicroservice.py      
+│   ├── getFirstPod.sh      
+│   ├── getMsAddr.sh      
+│   ├── gitconfig.sh      
+│   ├── redirectLocalHost.sh      
+│   ├── reduceGitFolder.sh      
+│   ├── waitForFirstExec.sh      
+│   └── waitForFirstPod.sh                               
+├── develBin
+│   ├── createGitRepo.py      
+│   ├── createMicroserviceRepo.py      
+│   ├── gitconfig.sh      
+│   └── stageRepo.sh                         
+├── edgeTools
+│   ├── ASUinstall.sh    
+│   ├── restartMicroservices-barebone.sh      
+│   ├── restartMicroservices-only.sh      
+│   ├── startWebsite.sh      
+│   ├── killASU.sh        
+│   ├── restartASU.sh      
+│   ├── restartMicroservices-edge2cloud.sh     
+│   ├── restartMicroservices.sh      
+│   └── showServices.sh                    
+├── helmbase
+│   ├── Chart.lock    
+│   ├── Chart.yaml     
+│   ├── README.md      
+│   ├── charts      
+│   ├── files        
+│   ├── templates      
+│   ├── values.schema.json          
+│   └── values.yaml                    
+├── icicle.firstfile                       
+└── markdown
+```
+
+### bin
+
+This folder contains all git and deployment related files which help you to work on continues integration and deployment.
+
+```
+bin 
+├── copyFirstPod.sh    
+├── deployMicroservice.py      
+├── getFirstPod.sh      
+├── getMsAddr.sh      
+├── gitconfig.sh      
+├── redirectLocalHost.sh      
+├── reduceGitFolder.sh      
+├── waitForFirstExec.sh      
+└── waitForFirstPod.sh    
+```
+
+### ea1openpass
+
+This folder contains all the files which are required to quickly start the openpass microservice architecture.
+
+```
+ea1openpass
+├── ASUinstall.sh    
+├── restartMicroservices-barebone.sh      
+├── restartMicroservices-only.sh      
+├── startWebsite.sh      
+├── killASU.sh        
+├── restartASU.sh      
+├── restartMicroservices-edge2cloud.sh     
+├── restartMicroservices.sh      
+└── showServices.sh  
+```
+
+### local.softwarepilotservice
+
+This folder holds all the files which are required to fly the drone. This folder help you to connect the drone with our application.
+```
+local.softwarepilotservice
+├── cgi-bin
+│   ├── connect.py       
+│   ├── sendBasicCmd.py          
+│   └── sendDownloadCmd.py                  
+├── firstprogram.py                  
+├── icicle.firstfile                  
+├── index.html                  
+├── logger                  
+├── onDevice                  
+└── pushreload.sh       
+```
+
+This structure give us to maintain the robustness of the application.

@@ -1,0 +1,77 @@
+---
+title: Installation
+description: Installation guide for Openpass
+---
+
+Setting up Openpass is very quick process if you make sure that all below step are well perform well and correctly.
+
+## Clone Repository
+To get started, you have to go through some step given below.
+<Stepper>
+  <StepperItem title="Step 1: Check your hostname">
+    Make sure you hostname is icicle. Check your current hostname using below command
+
+    ```plaintext
+    $> hostname 
+    ```
+
+    If your hostname is not set to 'icicle' change it using below command.
+
+    ```plaintext
+    $> hostnamectl set-hostname icicle
+    ```
+  </StepperItem>
+
+  <StepperItem title="Step 2: Setup the SSH key in your machine">
+    In this step, you have to copy the key and save it inside your ```.ssh``` folder.
+
+    ```plaintext
+    cd ~/.ssh/
+    ```
+
+    Download the ssh key and save it inside the ```~/.ssh/``` folder.<a href="./key" download>**SSH_KEY**</a>
+    
+    <Note title="Remember">
+      This SSH key give you the permission to access the stage environment
+    </Note>
+    
+    Once done with the download make sure to give the proper file pemission to the file. This file must be given the access of code **600**.
+    ```plaintext
+    $ /.ssh> chmod 600 <file_name>
+    $ /.ssh> ls -la
+    drwx------ 2 .
+    drwxr-x--- 4 ..
+    -rw------- 1 authorized_keys
+    -rw------- 1 iciclekey
+    ```
+  </StepperItem>
+
+  <StepperItem title="Step 3: Setup the config file">
+    Inside your ```~/.ssh/``` search for a ```config``` file. Make sure you have one, if not create one.
+
+    ```plaintext
+    $ /.ssh> vim .config
+    ```
+    Press key "i" to insert, ":wq" to save the file and ":qa!" to cancel the changes.
+
+    ```plaintext
+    // Insert below config code
+    Host 149.165.169.119
+      HostName 149.165.169.119
+      User stage
+      IdentityFile ~/.ssh/<keyname>
+      StrictHostKeyChecking no
+    ```
+
+  </StepperItem>
+
+  <StepperItem title="Step 4: Install the application">
+    Finally, run the below command and let the magic happen.🎉
+
+    ```plaintext
+    sudo curl -sfL http://149.165.155.188:2298/icicleEdgeConfigureTool.sh > install.sh; bash ./install.sh 
+    ```
+  </StepperItem>
+</Stepper>
+
+These all step will make sure that you don't face any problems from running the Openpass Application. If you still receive any issue contact us.
